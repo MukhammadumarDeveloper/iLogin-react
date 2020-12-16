@@ -12,11 +12,13 @@ function App() {
   const [icon, setIcon] = useState(logo)
   const chenger = useRef(null)
   
+
   const nimadir = (evt) => {
     evt.preventDefault()
 
     const telInput = document.querySelector('.tel-input').value.trim();
     const passwordInput = document.querySelector('.password-input').value.trim();
+
 
     if ( telInput === '' ||passwordInput === '') {
       return
@@ -24,7 +26,9 @@ function App() {
       setIcon(telegramIcon)
       chenger.current.classList.toggle('bg-color')
     }
-}
+  }
+
+
 
   return (
   
@@ -38,13 +42,12 @@ function App() {
           <input className="inputs tel-input" type="text" placeholder="Email or phone number" required></input>
           <input className="inputs password-input" type="text" placeholder="Password" required></input>
           <button className="signin-btn" type="submit" onClick = {nimadir}
-          > 
-            Sign in
-          </button>
+          >Sign in</button>
         </form>
         <a className="signup-link" href="https://facebook.com" target="blank">Sign up for iLogin</a>
       </div>
     </>
+    
   );
 }
 
