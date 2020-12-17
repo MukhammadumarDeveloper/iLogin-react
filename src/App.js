@@ -5,16 +5,13 @@ import { useState } from 'react'
 import { useRef } from 'react'
 
 
-
-
-
 function App() {
   const [icon, setIcon] = useState(fbIcon)
   const [alt, setAlt] = useState('fb')
   const chenger = useRef(null)
   
 
-  const nimadir = (evt) => {
+  const chsngeColor = (evt) => {
     evt.preventDefault()
 
     const telInput = document.querySelector('.tel-input').value.trim();
@@ -50,7 +47,7 @@ function App() {
         <form className="signin-form">
           <input className="inputs tel-input" type="text" placeholder="Email or phone number" required></input>
           <input className="inputs password-input" type="text" placeholder="Password" required></input>
-          <button className="signin-btn" type="submit" onClick = {nimadir}
+          <button className="signin-btn" type="submit" onClick = {chsngeColor}
           >Sign in</button>
         </form>
         <a className="signup-link" href="https://facebook.com" target="blank">Sign up for iLogin</a>
