@@ -26,15 +26,15 @@ function App() {
       return
     } if (imgAlt === 'fb') {
       setIcon(wtIcon)
+      chenger.current.classList.remove('fb-color')
       chenger.current.classList.add('tw-color')
       setAlt('wt')
     } else if (imgAlt === 'wt') {
       setIcon(fbIcon)
       chenger.current.classList.remove('tw-color')
       chenger.current.classList.add('fb-color')
+      setAlt('fb')
     } 
-
-    console.log(imgAlt);
   }
 
 
