@@ -1,5 +1,5 @@
-import logo from './images/facebook.png'
-import telegramIcon from './images/watsapp.png'
+import fbIcon from './images/facebook.png'
+import wtIcon from './images/watsapp.png'
 import './App.css';
 import { useState } from 'react'
 import { useRef } from 'react'
@@ -9,7 +9,8 @@ import { useRef } from 'react'
 
 
 function App() {
-  const [icon, setIcon] = useState(logo)
+  const [icon, setIcon] = useState(fbIcon)
+  const [alt, setAlt] = useState('fb')
   const chenger = useRef(null)
   
 
@@ -23,12 +24,12 @@ function App() {
 
     if ( telInput === '' ||passwordInput === '') {
       return
-    } if (imgAlt === '') {
-      setIcon(telegramIcon)
+    } if (imgAlt === 'fb') {
+      setIcon(wtIcon)
       chenger.current.classList.add('tw-color')
-      imgAlt = 'tw'
-    } else if (imgAlt === 'tw') {
-      setIcon(logo)
+      setAlt('wt')
+    } else if (imgAlt === 'wt') {
+      setIcon(fbIcon)
       chenger.current.classList.remove('tw-color')
       chenger.current.classList.add('fb-color')
     } 
@@ -42,7 +43,7 @@ function App() {
   
     <>
       <div className="logo-wrapper">
-        <img className="logo" src={icon} alt="" width="130" height="130" />
+        <img className="logo" src={icon} alt={alt} width="130" height="130" />
       </div> 
       <div className="box" ref={chenger}>
         <h2 className="title">Sign in</h2>
