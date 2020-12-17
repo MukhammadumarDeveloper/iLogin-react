@@ -1,5 +1,5 @@
-import logo from './images/fb-icon.png'
-import telegramIcon from './images/wp-icon.png'
+import logo from './images/facebook.png'
+import telegramIcon from './images/watsapp.png'
 import './App.css';
 import { useState } from 'react'
 import { useRef } from 'react'
@@ -18,14 +18,22 @@ function App() {
 
     const telInput = document.querySelector('.tel-input').value.trim();
     const passwordInput = document.querySelector('.password-input').value.trim();
-
+    var imgAlt = document.querySelector('.logo').alt;
+  
 
     if ( telInput === '' ||passwordInput === '') {
       return
-    } else {
+    } if (imgAlt === '') {
       setIcon(telegramIcon)
-      chenger.current.classList.toggle('bg-color')
-    }
+      chenger.current.classList.add('tw-color')
+      imgAlt = 'tw'
+    } else if (imgAlt === 'tw') {
+      setIcon(logo)
+      chenger.current.classList.remove('tw-color')
+      chenger.current.classList.add('fb-color')
+    } 
+
+    console.log(imgAlt);
   }
 
 
@@ -34,7 +42,7 @@ function App() {
   
     <>
       <div className="logo-wrapper">
-        <img className="logo" src={icon} alt="fb logo" width="130" height="130" />
+        <img className="logo" src={icon} alt="" width="130" height="130" />
       </div> 
       <div className="box" ref={chenger}>
         <h2 className="title">Sign in</h2>

@@ -69,6 +69,10 @@
   letter-spacing: 1px;
 }
 
-.bg-color {
+.tw-color {
   background-color: #25D366;
+}
+
+.fb-color {
+  background-color: #162369;
 }
